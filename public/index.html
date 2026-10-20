@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0f1115" />
+    <title>Hangisi Yapay Zekâ?</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main id="app">
+      <!-- 1) Başlangıç -->
+      <section id="screen-start" class="screen active center">
+        <h1>Hangisi yapay zekâ? 🤖</h1>
+        <p class="muted">
+          Her soruda iki görsel göreceksin. Yapay zekâ ile üretilmiş olanı bul!
+        </p>
+        <input
+          id="name-input"
+          type="text"
+          placeholder="Adın"
+          maxlength="40"
+          autocomplete="given-name"
+        />
+        <button id="start-btn" class="btn">Başla</button>
+        <p id="start-error" class="error"></p>
+      </section>
+
+      <!-- 2) Sorular -->
+      <section id="screen-quiz" class="screen">
+        <header class="topbar">
+          <span id="progress">1 / 10</span>
+          <div class="bar"><div id="bar-fill"></div></div>
+        </header>
+
+        <h2 class="question">Hangisi yapay zekâ ile üretilmiş?</h2>
+
+        <div class="options">
+          <button class="option" id="opt-0" aria-label="Seçenek 1">
+            <img alt="" />
+            <span class="badge"></span>
+          </button>
+          <button class="option" id="opt-1" aria-label="Seçenek 2">
+            <img alt="" />
+            <span class="badge"></span>
+          </button>
+        </div>
+
+        <div id="feedback" class="feedback hidden">
+          <p id="feedback-text" class="feedback-title"></p>
+          <p id="feedback-stats" class="muted"></p>
+          <button id="next-btn" class="btn">Sonraki</button>
+        </div>
+      </section>
+
+      <!-- 3) Sonuç -->
+      <section id="screen-result" class="screen center">
+        <h1>Bitti! 🎉</h1>
+        <p id="result-name" class="muted"></p>
+        <p id="result-score" class="big-score"></p>
+        <button id="restart-btn" class="btn">Tekrar oyna</button>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
